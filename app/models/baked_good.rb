@@ -1,3 +1,7 @@
 class BakedGood < ActiveRecord::Base
-  # add association macro here
+  belongs_to :bakery
+
+  def self.order_goods 
+    self.all.order(:price)
+  end
 end
